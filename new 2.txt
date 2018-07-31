@@ -1,1 +1,319 @@
-se creo exitosamente la rama homepage
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios
+$ mkdir modulo5
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios
+$ cd modulo5/
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5
+$ echo "# modulo5" >>  README.md
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5
+$ git init
+Initialized empty Git repository in F:/Repositorios/modulo5/.git/
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (master)
+$ add README.md
+bash: add: command not found
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (master)
+$ git add README.md
+warning: LF will be replaced by CRLF in README.md.
+The file will have its original line endings in your working directory.
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   README.md
+
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (master)
+$ git commit -m "primer commit"
+[master (root-commit) 40895e7] primer commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (master)
+$ git remote add origin git@github.com:EdwinRojasCl/modulo5.git
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (master)
+$ git push -u origin master
+To github.com:EdwinRojasCl/modulo5.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'git@github.com:EdwinRojasCl/modulo5.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (master)
+$ git pull origin master
+warning: no common commits
+remote: Counting objects: 3, done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From github.com:EdwinRojasCl/modulo5
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> origin/master
+fatal: refusing to merge unrelated histories
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (master)
+$ git push -u origin master
+To github.com:EdwinRojasCl/modulo5.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'git@github.com:EdwinRojasCl/modulo5.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (master)
+$ git pull origin
+You asked to pull from the remote 'origin', but did not specify
+a branch. Because this is not the default configured remote
+for your current branch, you must specify a branch on the command line.
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (master)
+$ git pull origin master
+From github.com:EdwinRojasCl/modulo5
+ * branch            master     -> FETCH_HEAD
+fatal: refusing to merge unrelated histories
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (master)
+$ --allow-unrelated-histories
+bash: --allow-unrelated-histories: command not found
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (master)
+$ git pull origin master --allow-unrelated-histories
+From github.com:EdwinRojasCl/modulo5
+ * branch            master     -> FETCH_HEAD
+Auto-merging README.md
+CONFLICT (add/add): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (master|MERGING)
+$ git merge
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (master|MERGING)
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+        both added:      README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (master|MERGING)
+$ git add .
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (master|MERGING)
+$ git commit -m "merge"
+[master 5ddcc41] merge
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (master)
+$ git add Nuevo\ documento\ de\ texto.txt
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (master)
+$ LS
+'Nuevo documento de texto.txt'   README.md
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (master)
+$
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   Nuevo documento de texto.txt
+
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (master)
+$ git commit -m "nef file void"
+[master fe36439] nef file void
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 Nuevo documento de texto.txt
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (master)
+$ git push -u origin master
+Counting objects: 9, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (9/9), 812 bytes | 81.00 KiB/s, done.
+Total 9 (delta 0), reused 0 (delta 0)
+To github.com:EdwinRojasCl/modulo5.git
+   88f784c..fe36439  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (master)
+$ git checkout
+Your branch is up to date with 'origin/master'.
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (master)
+$ git log --oneline
+fe36439 (HEAD -> master, origin/master) nef file void
+5ddcc41 merge
+40895e7 primer commit
+88f784c Initial commit
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (master)
+$ git log --oneline --graph
+* fe36439 (HEAD -> master, origin/master) nef file void
+*   5ddcc41 merge
+|\
+| * 88f784c Initial commit
+* 40895e7 primer commit
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (master)
+$ git log --oneline --graph --decorate
+* fe36439 (HEAD -> master, origin/master) nef file void
+*   5ddcc41 merge
+|\
+| * 88f784c Initial commit
+* 40895e7 primer commit
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (master)
+$ git branch
+* master
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (master)
+$ git branch repolab5
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (master)
+$ git branch
+* master
+  repolab5
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (master)
+$ git chekout repolabo5
+git: 'chekout' is not a git command. See 'git --help'.
+
+The most similar command is
+        checkout
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (master)
+$ git checkout repolabo5
+error: pathspec 'repolabo5' did not match any file(s) known to git.
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (master)
+$ git checkout repolab5
+Switched to branch 'repolab5'
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (repolab5)
+$ git status
+On branch repolab5
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        new 2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (repolab5)
+$ git branch
+  master
+* repolab5
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (repolab5)
+$ git checkout -b homepage
+Switched to a new branch 'homepage'
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (homepage)
+$ git branch
+* homepage
+  master
+  repolab5
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (homepage)
+$ git status
+On branch homepage
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        new 2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (homepage)
+$ git add .
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (homepage)
+$ git push origin homepage
+Total 0 (delta 0), reused 0 (delta 0)
+To github.com:EdwinRojasCl/modulo5.git
+ * [new branch]      homepage -> homepage
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (homepage)
+$ git status
+On branch homepage
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   new 2.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   new 2.txt
+
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (homepage)
+$ git add .
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (homepage)
+$ git git commit -m "se modifico el archivo new 2"
+git: 'git' is not a git command. See 'git --help'.
+
+The most similar command is
+        init
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (homepage)
+$ git commit -m "se modifico el archivo new 2"
+[homepage ee02897] se modifico el archivo new 2
+ 1 file changed, 1 insertion(+)
+ create mode 100644 new 2.txt
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (homepage)
+$ git push origin homepage
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 323 bytes | 323.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:EdwinRojasCl/modulo5.git
+   fe36439..ee02897  homepage -> homepage
+
+EDWIN@DESKTOP-0G6G7B5 MINGW64 /f/Repositorios/modulo5 (homepage)
+$
